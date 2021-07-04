@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Rookie.DataAccessor.Configurations;
 using Rookie.DataAccessor.Entities;
+using Rookie.DataAccessor.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,12 @@ namespace Rookie.DataAccessor.Data
             modelBuilder.ApplyConfiguration(new CustomerConfiguration());
             modelBuilder.ApplyConfiguration(new ShoppingCartConfiguration());
             //base.OnModelCreating(modelBuilder);
+            //seeding data
+            modelBuilder.Seed();
         }
+
+        
+        
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rookie.DataAccessor.Data;
 
 namespace Rookie.DataAccessor.Migrations
 {
     [DbContext(typeof(RookieDbcontext))]
-    partial class RookieDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20210704031629_CreateData_Product")]
+    partial class CreateData_Product
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,22 +43,6 @@ namespace Rookie.DataAccessor.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("e1d33fda-2fa3-4927-a07a-2bfc243df88f"),
-                            CreatedDate = new DateTime(2021, 7, 4, 10, 36, 30, 495, DateTimeKind.Local).AddTicks(1840),
-                            Description = "Mua ban cac loai thu cung",
-                            Name = "Thu cung"
-                        },
-                        new
-                        {
-                            Id = new Guid("de876948-cbe2-4740-b944-030ef8e40c28"),
-                            CreatedDate = new DateTime(2021, 7, 4, 10, 36, 30, 495, DateTimeKind.Local).AddTicks(1861),
-                            Description = "Cac loai thuc an danh cho thu cung",
-                            Name = "Thuc an cho Pet"
-                        });
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Customer", b =>
@@ -173,7 +159,7 @@ namespace Rookie.DataAccessor.Migrations
                         new
                         {
                             Id = new Guid("d6c40780-01ef-466e-8ae0-0b3c51d62285"),
-                            CreatedDate = new DateTime(2021, 7, 4, 10, 36, 30, 492, DateTimeKind.Local).AddTicks(5753),
+                            CreatedDate = new DateTime(2021, 7, 4, 10, 16, 29, 68, DateTimeKind.Local).AddTicks(9236),
                             Description = "Giong cho tu Chau Au",
                             Images = "/alaska.png",
                             Name = "Alaska",
@@ -182,7 +168,7 @@ namespace Rookie.DataAccessor.Migrations
                         new
                         {
                             Id = new Guid("e044de2d-2183-445c-a821-0b06fec05cd4"),
-                            CreatedDate = new DateTime(2021, 7, 4, 10, 36, 30, 493, DateTimeKind.Local).AddTicks(6308),
+                            CreatedDate = new DateTime(2021, 7, 4, 10, 16, 29, 69, DateTimeKind.Local).AddTicks(9187),
                             Description = "Giong cho tu Viet Nam",
                             Images = "/phuquoc.png",
                             Name = "Cho Phu Quoc",
@@ -191,38 +177,11 @@ namespace Rookie.DataAccessor.Migrations
                         new
                         {
                             Id = new Guid("a742eec4-a3a1-4623-b146-97f21d227080"),
-                            CreatedDate = new DateTime(2021, 7, 4, 10, 36, 30, 493, DateTimeKind.Local).AddTicks(6327),
+                            CreatedDate = new DateTime(2021, 7, 4, 10, 16, 29, 69, DateTimeKind.Local).AddTicks(9207),
                             Description = "Giong cho tu Nhat Ban",
                             Images = "/shiba.png",
                             Name = "shiba",
                             Price = 35000000m
-                        },
-                        new
-                        {
-                            Id = new Guid("290d1a74-0839-4919-a2b2-6a5bcf097757"),
-                            CreatedDate = new DateTime(2021, 7, 4, 10, 36, 30, 493, DateTimeKind.Local).AddTicks(6333),
-                            Description = "Thuc an loai tot nhat",
-                            Images = "/loaiA.png",
-                            Name = "Thuc an loai A",
-                            Price = 3000000m
-                        },
-                        new
-                        {
-                            Id = new Guid("e3bc0d45-6f0e-4e04-b06f-9dd6ba0190f9"),
-                            CreatedDate = new DateTime(2021, 7, 4, 10, 36, 30, 493, DateTimeKind.Local).AddTicks(6337),
-                            Description = "Thuc an loai vua",
-                            Images = "/loaiB.png",
-                            Name = "Thuc an loai B",
-                            Price = 2000000m
-                        },
-                        new
-                        {
-                            Id = new Guid("5c6ece7a-4bcc-4690-bb51-c42034178db0"),
-                            CreatedDate = new DateTime(2021, 7, 4, 10, 36, 30, 493, DateTimeKind.Local).AddTicks(6340),
-                            Description = "Thuc an loai binh thuong",
-                            Images = "/loaiC.png",
-                            Name = "Thuc an loai C",
-                            Price = 1000000m
                         });
                 });
 
@@ -239,38 +198,6 @@ namespace Rookie.DataAccessor.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductCategory");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = new Guid("e1d33fda-2fa3-4927-a07a-2bfc243df88f"),
-                            ProductId = new Guid("d6c40780-01ef-466e-8ae0-0b3c51d62285")
-                        },
-                        new
-                        {
-                            CategoryId = new Guid("e1d33fda-2fa3-4927-a07a-2bfc243df88f"),
-                            ProductId = new Guid("e044de2d-2183-445c-a821-0b06fec05cd4")
-                        },
-                        new
-                        {
-                            CategoryId = new Guid("e1d33fda-2fa3-4927-a07a-2bfc243df88f"),
-                            ProductId = new Guid("a742eec4-a3a1-4623-b146-97f21d227080")
-                        },
-                        new
-                        {
-                            CategoryId = new Guid("de876948-cbe2-4740-b944-030ef8e40c28"),
-                            ProductId = new Guid("290d1a74-0839-4919-a2b2-6a5bcf097757")
-                        },
-                        new
-                        {
-                            CategoryId = new Guid("de876948-cbe2-4740-b944-030ef8e40c28"),
-                            ProductId = new Guid("e3bc0d45-6f0e-4e04-b06f-9dd6ba0190f9")
-                        },
-                        new
-                        {
-                            CategoryId = new Guid("de876948-cbe2-4740-b944-030ef8e40c28"),
-                            ProductId = new Guid("5c6ece7a-4bcc-4690-bb51-c42034178db0")
-                        });
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductRating", b =>

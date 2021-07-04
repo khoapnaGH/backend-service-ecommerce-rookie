@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rookie.DataAccessor.Data;
 
 namespace Rookie.DataAccessor.Migrations
 {
     [DbContext(typeof(RookieDbcontext))]
-    partial class RookieDbcontextModelSnapshot : ModelSnapshot
+    [Migration("20210704033631_CreateData_Category_ProductCategory")]
+    partial class CreateData_Category_ProductCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
