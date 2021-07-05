@@ -12,4 +12,12 @@
     <Folder Include="Data\Entities\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Backend.Infrastructure\Rookie.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Rookie.Bussiness\Rookie.Bussiness.csproj" />
+    <ProjectReference Include="..\..\Rookie.Contracts\Rookie.Contracts.csproj" />
+    <ProjectReference Include="..\..\Rookie.DataAccessor\Rookie.DataAccessor.csproj" />
+    <ProjectReference Include="..\Rookies.Ecom.ViewModels\Rookies.Ecom.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>
